@@ -1,0 +1,6 @@
+[submodule "Source/Libs/magic_enum"]
+	path = Source/Libs/magic_enum
+	url = https://github.com/Neargye/magic_enum.git
+[submodule "Plugins/UnrealImGui"]
+	path = Plugins/UnrealImGui
+	url = https://github.com/segross/UnrealImGui.git
