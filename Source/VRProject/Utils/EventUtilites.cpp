@@ -1,4 +1,4 @@
-// Copyright 2020 Gabriel Bustillo del Cuvillo
+// Gabriel Bustillo del Cuvillo
 
 #include "EventUtilites.h"
 #include "Kismet/GameplayStatics.h"

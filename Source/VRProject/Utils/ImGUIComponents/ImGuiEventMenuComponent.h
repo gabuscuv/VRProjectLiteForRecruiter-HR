@@ -1,5 +1,3 @@
-// Copyright 2020 Gabriel Bustillo del Cuvillo
-
 #pragma once
 
 #include "../ImGuiCommon.h"
@@ -14,6 +12,7 @@ UCLASS(Blueprintable, meta = (BlueprintSpawnableComponent))
 class UImGuiEventMenuComponent : public UActorComponent
 {
 	GENERATED_BODY()
+	#if WITH_IMGUI
 	public:
 	UImGuiEventMenuComponent();
 	virtual void BeginDestroy() override;
@@ -22,8 +21,6 @@ class UImGuiEventMenuComponent : public UActorComponent
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
-#if WITH_IMGUI
-
 	EEvents eventCurrentCombo;
 	void EventMenuWindow();
 	void ImGuiTick();
@@ -31,5 +28,6 @@ class UImGuiEventMenuComponent : public UActorComponent
 
 	FDelegateHandle ImGuiTickHandle;
 	static FDelegateHandle ImGuiMultiContextTickHandle;
-#endif // WITH_IMGUI
+	#endif
+
 };
