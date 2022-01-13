@@ -9,20 +9,17 @@
 #include <Runtime/Engine/Public/EngineUtils.h>
 
 FDelegateHandle UImGuiEventMenuComponent::ImGuiMultiContextTickHandle;
-#endif
 // ImGui code
 UImGuiEventMenuComponent::UImGuiEventMenuComponent()
 {
-    #if WITH_IMGUI
 
         // Techincly Newbish
     if (IsTemplate() && !ImGuiMultiContextTickHandle.IsValid() && FImGuiModule::IsAvailable())
 	{
 		ImGuiMultiContextTickHandle = FImGuiDelegates::OnMultiContextDebug().AddStatic(&UImGuiEventMenuComponent::ImGuiMultiContextTick);
     };
-    #endif // WITH_IMGUI
 }
-#if WITH_IMGUI
+
 
 void UImGuiEventMenuComponent::BeginPlay()
 {

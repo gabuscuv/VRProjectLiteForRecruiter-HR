@@ -1,5 +1,3 @@
-// Copyright 2020 Gabriel Bustillo del Cuvillo
-
 #include "ImGuiSubtitlesMenuComponent.h"
 
 #if WITH_IMGUI
@@ -10,7 +8,6 @@
 #include "../../Interfaces/SubtitleExecute.h"
 
 FDelegateHandle UImGuiSubtitlesMenuComponent::ImGuiMultiContextTickHandle;
-#endif
 // ImGui code
 UImGuiSubtitlesMenuComponent::UImGuiSubtitlesMenuComponent()
 {
@@ -20,7 +17,6 @@ UImGuiSubtitlesMenuComponent::UImGuiSubtitlesMenuComponent()
     }
 
 }
-#if WITH_IMGUI
 
 void UImGuiSubtitlesMenuComponent::BeginPlay()
 {
@@ -54,7 +50,6 @@ void UImGuiSubtitlesMenuComponent::EventMenuWindow()
         {
             FAdvancedSubtitleCue cue;
             TArray<FAdvancedSubtitleCue> test;
-
             // Gaby Dev Notes:
             // Hi HR/Recruiter, This portion of the code is interesting because
             // I'm dealing with transform C++ types (for example char[]) to Unreal C++ (FString)
@@ -63,7 +58,6 @@ void UImGuiSubtitlesMenuComponent::EventMenuWindow()
             // This shows my abilites deal with uncommon macros and using differents variable types from Unreal Environment.
             cue.Text=FText::FromString(FString(ANSI_TO_TCHAR(InputBuf)));
             cue.Time=std::atof(InputBuf2);
-
             cue.bOverride=true;
             test.Push(cue);
             TArray<AActor*> Array;

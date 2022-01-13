@@ -7,15 +7,19 @@
 
 #include "CoreMinimal.h"
 #include "../../Enums/EEvents.h"
-#endif
-#include "ImGuiSubtitlesMenuComponent.generated.h"
+#endif // WITH_IMGUI
 
+#include "ImGuiSubtitlesMenuComponent.generated.h"
+#if WITH_IMGUI
 DECLARE_MULTICAST_DELEGATE_OneParam(FSubtitlesPushDelegate,TArray<FSubtitleCue>)
+#endif // WITH_IMGUI
 
 UCLASS(Blueprintable, meta = (BlueprintSpawnableComponent))
 class UImGuiSubtitlesMenuComponent : public UActorComponent
 {
 	GENERATED_BODY()
+	#if WITH_IMGUI
+
 	public:
 	UImGuiSubtitlesMenuComponent();
 	
@@ -27,7 +31,6 @@ class UImGuiSubtitlesMenuComponent : public UActorComponent
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
-#if WITH_IMGUI
 
     char InputBuf[256];
 	char InputBuf2[256];
@@ -37,5 +40,5 @@ class UImGuiSubtitlesMenuComponent : public UActorComponent
 
 	FDelegateHandle ImGuiTickHandle;
 	static FDelegateHandle ImGuiMultiContextTickHandle;
-#endif // WITH_IMGUI
+	#endif // WITH_IMGUI
 };

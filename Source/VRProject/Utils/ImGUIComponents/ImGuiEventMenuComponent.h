@@ -14,6 +14,7 @@ UCLASS(Blueprintable, meta = (BlueprintSpawnableComponent))
 class UImGuiEventMenuComponent : public UActorComponent
 {
 	GENERATED_BODY()
+#if WITH_IMGUI
 	public:
 	UImGuiEventMenuComponent();
 	virtual void BeginDestroy() override;
@@ -21,8 +22,6 @@ class UImGuiEventMenuComponent : public UActorComponent
 	// To register and unregister per-object world delegate.
 	virtual void BeginPlay() override;
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-
-#if WITH_IMGUI
 
 	EEvents eventCurrentCombo;
 	void EventMenuWindow();
