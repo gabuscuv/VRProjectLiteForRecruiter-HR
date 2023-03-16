@@ -5,13 +5,16 @@
 #include "GameFramework/PlayerController.h" 
 
 // (Gaby) Dev Notes:
-// This is deprecated (for this project) But It's a good demostration about abilites for research about obscure/obfuscated properties (Hi Recluter/HR!).
-// But If you are looking for something like this, I highly recommend you check this property "UPrimitiveComponent::bVisibleInSceneCaptureOnly" or
-// On your PrimitiveComponent (like a UMeshComponent/StaticMeshComponent/SkeleticalMeshComponent) blueprint properties in the "Rendering" section
-// tick or untick "Visible In Scene Capture Only" (It's the same the same property)
-// This function may be still useful for multiplayer games (this is not the case) where you don't want to hide a mesh for everyone but for example by roles
-// when you are using SceneCaptureComponent, otherwise I would just recommend set to false to Visible Property.
-// (The HiddenActors are controlled by PlayerController or USceneCaptureComponents) 
+/*
+	This is deprecated (for this project) But It's a good demonstration of abilities for research about obscure/obfuscated properties (Hi Recluter/HR!).
+	But If you are looking for something like this, I highly recommend you check this property "UPrimitiveComponent::bVisibleInSceneCaptureOnly" or
+	On your PrimitiveComponent (like a UMeshComponent/StaticMeshComponent/SkeleticalMeshComponent) blueprint properties in the "Rendering" section
+	tick or untick "Visible In Scene Capture Only" (It's the same property)
+	This function may be still useful for multiplayer games (this is not the case) where you don't want to hide a mesh for everyone but for example by roles
+	when you are using SceneCaptureComponent, otherwise I would just recommend setting to false to Visible Property.
+	(The HiddenActors are controlled by PlayerController or USceneCaptureComponents) 
+*/
+
 void UCameraUtilities::AddHiddenActorsToCamera(APlayerController* playerController, TArray<AActor*> actors)
 {
 	

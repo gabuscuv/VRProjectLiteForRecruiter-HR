@@ -41,14 +41,15 @@ void UImGuiEventMenuComponent::ImGuiTick()
 }
 
 // Gaby Dev Notes:
-// Hi HR/Recruiter!, I would like highlight this portion of code, 
-// because It's something less common than your usual Unreal C++ code because I am using 2 code libraries of different nature
-// 1st It's ImGui which is usually a C++ but this time is integrated with a plugin called UnrealImGui (Located in /Plugins/UnrealImGui)
-// which use some helper functions like FImGuiDelegates (You can see in the line 21 & 31 of this document)
-// 2nd It's magic_enum which is a C++17 library and this is a pure C++ Library (Located in /Source/Lib/magic_enum)
-// This shows my ability to use different third-party libraries from differents sources and different proposes.
-// (+ I don't there is any tutorial of this two libs and much less together.)
-
+/*
+    Hi HR/Recruiter!, I would like to highlight this portion of the code, 
+    because It's something less common than your usual Unreal C++ code because I am using 2 code libraries of different nature
+    1st It's ImGui which is usually a C++ but this time is integrated with a plugin called UnrealImGui (Located in /Plugins/UnrealImGui)
+    which use some helper functions like FImGuiDelegates (You can see in lines 21 & 31 of this document)
+    2nd It's magic_enum which is a C++17 library and this is a pure C++ Library (Located in /Source/Lib/magic_enum)
+    This shows my ability to use different third-party libraries from different sources and different proposes.
+    (+ I don't there is any tutorial of these two libs and much less together.)
+*/
 void UImGuiEventMenuComponent::EventMenuWindow()
 {
     // ImGui code

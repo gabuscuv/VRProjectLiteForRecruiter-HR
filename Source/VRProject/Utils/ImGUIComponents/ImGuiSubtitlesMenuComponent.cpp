@@ -51,11 +51,13 @@ void UImGuiSubtitlesMenuComponent::EventMenuWindow()
             FAdvancedSubtitleCue cue;
             TArray<FAdvancedSubtitleCue> test;
             // Gaby Dev Notes:
-            // Hi HR/Recruiter, This portion of the code is interesting because
-            // I'm dealing with transform C++ types (for example char[]) to Unreal C++ (FString)
-            // This is important because there are some libraries doesn't work in the way that Unreal does.
-            // because they are more Regular C++ than Unreal C++
-            // This shows my abilites deal with uncommon macros and using differents variable types from Unreal Environment.
+            /*
+                Hi HR/Recruiter, This portion of the code is interesting because
+                I'm dealing with transform C++ types (for example char[]) to Unreal C++ (FString)
+                This is important because there are some libraries doesn't work in the way that Unreal does.
+                because they are more Regular C++ than Unreal C++
+                This shows my abilities to deal with uncommon macros and use differents variable types from Unreal Environment.
+            */
             cue.Text=FText::FromString(FString(ANSI_TO_TCHAR(InputBuf)));
             cue.Time=std::atof(InputBuf2);
             cue.bOverride=true;
